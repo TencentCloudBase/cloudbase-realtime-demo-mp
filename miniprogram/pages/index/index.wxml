@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="message-list">
+    <view class="message-item" wx:for="{{messages}}">
+      <image class="message-avatar" wx:if="item.avatarUrl" src="{{item.avatarUrl}}"></image>
+      <view wx:else class="message-avatar">{{item.name}}</view>
+      <view class="message-body">
+        <view class="message-text">{{item.text}}</view>
+        <view class="message-time">{{item.time}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="input-box">
+    <image class="avatar" wx:if="avatarUrl" src="{{avatarUrl}}"></image>
+    <input class="input" type="text" placeholder="说点什么吧~" bindinput="onInput" value='{{input}}'/>
+    <hr class="divider" />
+    <image class="send-btn" bindtap="sendMessage"
+      src="https://main.qcloudimg.com/raw/3dcd68cfc61c593873e7d5ca9bd6956d.png"></image>
+  </view>
+</view>
